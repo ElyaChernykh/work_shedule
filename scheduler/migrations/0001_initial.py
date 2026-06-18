@@ -21,8 +21,8 @@ class Migration(migrations.Migration):
                 ('is_active', models.BooleanField(default=True, verbose_name='Активен')),
             ],
             options={
-                'verbose_name': 'Бармен',
-                'verbose_name_plural': 'Бармены',
+                'verbose_name': 'Сотрудник',
+                'verbose_name_plural': 'Сотрудники',
             },
         ),
         migrations.CreateModel(
@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('date', models.DateField(verbose_name='Дата')),
-                ('bartender', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='shifts', to='scheduler.bartender', verbose_name='Бармен')),
+                ('bartender', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='shifts', to='scheduler.bartender', verbose_name='Сотрудник')),
             ],
             options={
                 'verbose_name': 'Смена',
@@ -43,7 +43,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('date', models.DateField(verbose_name='Дата')),
-                ('bartender', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='desired_time_off', to='scheduler.bartender', verbose_name='Бармен')),
+                ('bartender', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='desired_time_off', to='scheduler.bartender', verbose_name='Сотрудник')),
             ],
             options={
                 'verbose_name': 'Желаемый выходной',
@@ -57,7 +57,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('month', models.DateField(verbose_name='Месяц')),
                 ('shift_count', models.PositiveIntegerField(default=0, verbose_name='Количество смен')),
-                ('bartender', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='work_summaries', to='scheduler.bartender', verbose_name='Бармен')),
+                ('bartender', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='work_summaries', to='scheduler.bartender', verbose_name='Сотрудник')),
             ],
             options={
                 'verbose_name': 'Итоги работы',

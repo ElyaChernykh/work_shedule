@@ -1,6 +1,9 @@
 from django.contrib import admin
 from .models import Employee, Shift, DesiredTimeOff, WorkSummary
 
+admin.site.site_header = "Магазин бытовой техники «Комп» ООО “М-Сервис”"
+admin.site.site_title = "Администрирование магазина «Комп»"
+admin.site.index_title = "Управление персоналом/сменами магазина «Комп»"
 
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):

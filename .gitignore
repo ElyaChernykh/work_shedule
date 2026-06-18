@@ -46,4 +46,8 @@ nosetests.xml
 coverage.xml
 *.cover
 
-
+.env
+db.sqlite3
+*.pyc
+__pycache__/
+staticfiles/
